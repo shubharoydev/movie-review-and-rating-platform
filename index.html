@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineReview</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <header>
+        <div class="logo">CineReview <i class="fas fa-star"></i></div>
+        <nav>
+            <button id="home-btn">Home</button>
+            <button id="my-reviews-btn">My Reviews</button> 
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Discover Great Movies</h1>
+            <p class="tagline">Rate, review, and discover your next favorite film with our community of movie enthusiasts</p>
+            <div class="search-bar">
+                <input type="text" id="search-input" placeholder="Search for movies, actors, directors...">
+                <button id="search-btn">Search</button>
+            </div>
+        </section>
+
+        <section id="search-results" class="grid hidden"></section>
+        <section id="movie-details" class="hidden">
+            <div class="movie-card detailed">
+                <img id="movie-poster" src="" alt="Movie Poster">
+                <div class="movie-info">
+                    <h2 id="movie-title"></h2>
+                    <p id="movie-year"></p>
+                    <p id="movie-plot"></p>
+                    <div class="rating">
+                        <label>Rate this movie:</label>
+                        <div id="star-rating" class="stars">
+                            <i class="far fa-star" data-value="1"></i>
+                            <i class="far fa-star" data-value="2"></i>
+                            <i class="far fa-star" data-value="3"></i>
+                            <i class="far fa-star" data-value="4"></i>
+                            <i class="far fa-star" data-value="5"></i>
+                        </div>
+                    </div>
+                    <textarea id="review-text" placeholder="Write your review..."></textarea>
+                    <button id="save-review-btn">Save Review</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="my-reviews" class="hidden">
+            <h2>My Rated Movies</h2>
+            <div id="reviews-list" class="grid"></div>
+        </section>
+
+        <div id="loading" class="hidden"><i class="fas fa-spinner fa-spin"></i> Loading...</div>
+        <div id="error" class="hidden"></div>
+    </main>
+
+    <script src="scripts/main.js"></script>
+</body>
+</html>

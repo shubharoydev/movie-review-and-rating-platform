@@ -1,0 +1,243 @@
+
+
+:root {
+    --bg-color: #1a1a2e;
+    --text-color: #ffffff;
+    --accent-color: #f7b32b;
+    --card-bg: #16213e;
+    --border-radius: 10px;
+    --transition: all 0.3s ease;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../assets/background.jpg') no-repeat center center/cover;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.5rem;
+    color: var(--accent-color);
+    display: flex;
+    align-items: center;
+}
+
+.logo i {
+    margin-left: 0.5rem;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+nav button {
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 1rem;
+    margin-left: 1.5rem; 
+    cursor: pointer;
+    transition: var(--transition);
+    padding: 0.9rem 2rem;
+} 
+
+nav button:hover {
+    color: var(--accent-color);
+}
+
+
+.hero {
+    padding: 100px 2rem 2rem;
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+}
+
+.tagline {
+    font-size: 1.2rem;
+    color: #d3d3d3;
+    margin-bottom: 2rem;
+    max-width: 600px;
+}
+
+.search-bar {
+    display: flex;
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 2rem;
+}
+
+#search-input {
+    flex-grow: 1;
+    padding: 0.8rem;
+    border: none;
+    border-radius: var(--border-radius) 0 0 var(--border-radius);
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    font-size: 1rem;
+}
+
+#search-btn {
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 0 var(--border-radius) var(--border-radius) 0;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+#search-btn:hover {
+    background-color: #e0a023;
+}
+
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+    padding: 2rem;
+}
+
+.movie-card {
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.movie-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+}
+
+.movie-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.movie-card h3 {
+    padding: 1rem;
+    margin: 0;
+    text-align: center;
+}
+
+.detailed {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.detailed img {
+    height: auto;
+    max-width: 300px;
+}
+
+.movie-info {
+    padding: 1rem;
+    text-align: center;
+}
+
+.stars {
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0;
+}
+
+.stars i {
+    font-size: 1.5rem;
+    color: #ccc;
+    cursor: pointer;
+    transition: var(--transition);
+    margin: 0 0.2rem;
+}
+
+.stars i.fas {
+    color: var(--accent-color);
+}
+
+textarea {
+    width: 100%;
+    height: 100px;
+    padding: 0.5rem;
+    border: none;
+    border-radius: var(--border-radius);
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    resize: vertical;
+}
+
+#save-review-btn {
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: var(--transition);
+}
+
+#save-review-btn:hover {
+    background-color: #e0a023;
+}
+
+.hidden {
+    display: none;
+}
+
+#loading {
+    text-align: center;
+    font-size: 1.2rem;
+    margin: 2rem 0;
+}
+
+#error {
+    text-align: center;
+    color: red;
+    margin: 2rem 0;
+}
+
+@media (min-width: 768px) {
+    .detailed {
+        flex-direction: row;
+        text-align: left;
+    }
+    .movie-info {
+        padding-left: 2rem;
+        text-align: left;
+    }
+}
